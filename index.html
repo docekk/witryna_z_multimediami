@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 
 <head>
   <!-- Required meta tags -->
@@ -15,108 +15,423 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-  <title>Hello, world!</title>
-  <style>
-    * {
-      font-family: 'Poppins', sans-serif;
-      color: whitesmoke;
-    }
+  <link rel="apple-touch-icon" sizes="180x180" href="resources/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/icons/favicon-16x16.png">
+  <link rel="manifest" href="resources/icons/site.webmanifest">
 
-    .menu,
-    footer {
-      background-color: black;
-      height: 70px;
-    }
+  <script src="https://kit.fontawesome.com/817c2c56be.js" crossorigin="anonymous"></script>
 
-    #tlo {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: -1;
-    }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    .section {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .card {
-      background-color: rgb(18, 21, 189);
-    }
-
-    .champ1 {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 125px;
-      height: 125px;
-    }
-
-    .champ2 {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      width: 175px;
-      height: 175px;
-    }
-  </style>
+  <title>League of Legends - Bohaterowie</title>
+  <!-- our css -->
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+  <!-- WIDEO -->
   <video autoplay muted loop id="tlo">
-    <source src="addons/tlo.mp4" type="video/mp4">
+    <source src="resources/tlo.mp4" type="video/mp4">
   </video>
+
   <!-- MENU -->
-  <div class="menu">
-    <p class="container py-3"><span class="h3">MENU</span></p>
+
+  <div class="menu border-bottom animate__animated animate__fadeIn animate__slow">
+    <p class="container py-3 px-3">
+      <span class="h3"><a class="przycisk" href="#">STRONA GŁÓWNA</a></span> <span class="h3 mx-5"><a class="przycisk"
+          href="#champions">BOHATEROWIE</a></span><img src="resources/LigaLogo.png" height="125" width="125"
+        alt="logo na stronie" id="logo" class="position-absolute top-0 start-50 translate-middle">
+    </p>
   </div>
-  <!-- KONIEC MENU -->
 
   <!-- CONTENT -->
   <div class="container">
     <div class="row">
-      <div class="col my-5 ">
-        <div class="row rounded section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, iste quibusdam
-          modi et
-          itaque, officia eum, atque harum odio ducimus hic amet omnis. Alias itaque non sint quas temporibus? Et?
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates quos fuga ex! Harum, aliquam
-          incidunt earum similique tempora debitis qui necessitatibus quaerat optio quis, exercitationem iste modi
-          inventore repellendus!</div> <br>
-        <div class="row rounded section">
-          <p class="h4 my-3">BOHATEROWIE</p>
-          <div class="champ"><img class="champ1" src="addons/champs/jhin.jpg" alt=""><img class="champ2" src="addons/champs/ionianborder.png" alt="">
+      <div class="col my-5">
+        <div class="row intro d-flex align-items-center justify-content-center text-center">
+          <button class="btn-intro h3 border rounded-pill p-3"><a href="#about"> Wprowadź mnie do świata<br> League of
+              Legends!</a></button>
+        </div>
+        <div class="row rounded section my-5" id="about">
+          <p class="h2 my-4 border-bottom text-center">Świat League of Legends</p>
+          <p class="h4"> League of Legends to drużynowa gra strategiczna, w której dwie drużyny składające się z pięciu
+            potężnych bohaterów walczą ze sobą, by zniszczyć bazę przeciwnika. Wybieraj spośród ponad 150 bohaterów, by
+            przeprowadzać epickie zagrania, zabijać wrogów i niszczyć wieże, zmierzając po zwycięstwo. Każdy z bohaterów
+            posiada unikalną historię, a Ty którego z nich polubisz?</p>
+        </div>
+        <div class="row rounded section" id="champions">
+          <p class="h3 my-4 border-bottom text-center">BOHATEROWIE LOL'a - kliknij na ramkę aby dowiedzieć się wiecej!
+          </p>
+
+          <!-- wiersz bohaterow -->
+          <div class="row my-5 text-center">
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="ahri" src="resources/champs/ramka_ahri.png" alt="ahri" onclick="play('ahri')">
+              <p>Ahri</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="aphelios" src="resources/champs/ramka_aphelios.png" alt="aphelios"
+                onclick="play('aphelios')">
+              <p>Aphelios</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="garen" src="resources/champs/ramka_garen.png" alt="garen"
+                onclick=" play('garen')">
+              <p>Garen</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="jhin" src="resources/champs/ramka_jhin.png" alt="jhin" onclick=" play('jhin')">
+              <p>Jhin</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="katarina" src="resources/champs/ramka_katarina.png" alt="katarina"
+                onclick=" play('katarina')">
+              <p>Katarina</p>
+              </a>
+            </div>
+          </div>
+          <!-- koniec wiersza -->
+
+          <!-- wiersz bohaterow -->
+          <div class="row my-5 text-center">
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="lux" src="resources/champs/ramka_lux.png" alt="lux" onclick="play('lux')">
+              <p>Lux</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="nasus" src="resources/champs/ramka_nasus.png" alt="nasus" onclick="play('nasus')">
+              <p>Nasus</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="rammus" src="resources/champs/ramka_rammus.png" alt="rammus"
+                onclick="play('rammus')">
+              <p>Rammus</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="teemo" src="resources/champs/ramka_teemo.png" alt="teemo" onclick="play('teemo')">
+              <p>Teemo</p>
+              </a>
+            </div>
+            <div class="col champ">
+              <a href="#cards-show">
+              <img class="champ1" id="yasuo" src="resources/champs/ramka_yasuo.png" alt="yasuo" onclick="play('yasuo')">
+              <p>Yasuo</p>
+              </a>
+            </div>
+          </div>
+          <!-- koniec wiersza -->
+        </div>
+        <div class="karty" id="cards-show">
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="ahri">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_ahri" width="250" height="280">
+                <p class="h4 px-3 py-2">Ahri</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Ahri to Vastajanka naturalnie połączona z magią krążącą po Runeterze, która może zmieniać
+                energię magiczną w kule czystej energii. Uwielbia bawić się swoimi ofiarami i manipulować ich emocjami,
+                aby później pożreć ich esencję życiową. Pomimo drapieżnej natury Ahri odczuwa empatię, ponieważ wraz z
+                pochłanianymi duszami otrzymuje przebłyski ich wspomnień.</p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="aphelios">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_aphelios" width="250" height="280">
+                <p class="h4 px-3 py-2">Aphelios</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Wychodząc z bronią w ręce z cienia rzucanego przez księżyc, Aphelios zabija wrogów swojej
+                wiary w złowrogiej ciszy — przemawia tylko poprzez niesamowitą celność i strzały z pistoletów. Choć
+                napędza go trucizna czyniąca z niego niemowę, to kieruje nim jego siostra Alune. Z odległego świątynnego
+                sanktuarium wpycha arsenał broni z kamienia księżycowego w jego ręce. Albowiem tak długo, jak księżyc
+                świeci nad jego głową, Aphelios nigdy nie będzie sam.</p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="garen">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_garen" width="250" height="280">
+                <p class="h4 px-3 py-2">Garen</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Dumny i szlachetny wojownik, Garen jest jednym z członków Nieustraszonej Gwardii. Jego
+                koledzy cenią go, a przeciwnicy szanują — zwłaszcza, że jest potomkiem szanowanego rodu Obrońców Korony,
+                któremu powierzono trzymanie pieczy nad Demacią i jej ideałami. Odziany w zbroję odporną na magię, Garen
+                i jego potężny miecz są gotowi stawić czoła magom i czarodziejom na polu bitwy w prawdziwym wirze prawej
+                stali.</p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="jhin">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_jhin" width="250" height="280">
+                <p class="h4 px-3 py-2">Jhin</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Jhin jest skrupulatnym, zbrodniczym psychopatą, który wierzy, że mordowanie jest sztuką.
+                Niegdyś był więźniem w Ionii, lecz został uwolniony przez szemranych członków tamtejszej rady rządzącej,
+                by teraz służyć im w ich intrygach w roli zabójcy. Jego pistolet jest mu jak pędzel, którego używa do
+                tworzenia prac pełnych artystycznej brutalności, przerażając swe ofiary oraz obserwatorów. Jego
+                makabryczny teatr sprawia mu okrutną przyjemność, co czyni z niego idealnego doręczyciela
+                najmocniejszego z przekazów: przerażenia.</p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="katarina">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_katarina" width="250" height="280">
+                <p class="h4 px-3 py-2">Katarina</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Stanowcza w osądzie i zabójcza w walce, Katarina jest noxiańską zabójczynią największego
+                kalibru. Najstarsza córka legendarnego generała Du Couteau, wsławiła się talentami do szybkiego
+                zabijania niczego niepodejrzewających wrogów. Jej ognisty zapał sprawił, że wybiera dobrze strzeżone
+                cele, często ryzykując życiem sojuszników. Lecz niezależnie od zadania, Katarina nie będzie wahała się
+                dopełnić obowiązku pośród wichury ząbkowanych sztyletów.</p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="lux">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_lux" width="250" height="280">
+                <p class="h4 px-3 py-2">Lux</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Obrończyni Korony Luxanna pochodzi z Demacii, krainy, w której do zdolności magicznych
+                podchodzi się z dystansem i strachem. Z powodu umiejętności władania światłem, dorastała w strachu przed
+                tym, że ktoś odkryje jej zdolności i ją wygna. Musiała trzymać swoją moc w tajemnicy, by zachować stan
+                szlachecki swojej rodziny. Niemniej jednak, optymizm i wytrwałość Lux pozwoliły jej na pogodzenie się ze
+                swoim wyjątkowym talentem, którego teraz potajemnie używa, służąc ojczyźnie.
+              </p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="nasus">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_nasus" width="250" height="280">
+                <p class="h4 px-3 py-2">Nasus</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Nasus jest majestatycznym, Wyniesionym bytem o głowie szakala, wywodzącym się z
+                przedwiecznej Shurimy. Herosem, którego ludzie pustyni uważali za półboga. Jego wyjątkowa inteligencja
+                sprawiła, że był opiekunem wiedzy i niezrównanym strategiem, a jego mądrość prowadziła pradawne imperium
+                Shurimy do wielkości przez całe stulecia. Po upadku imperium sam narzucił sobie wygnanie, stając się
+                niczym więcej niż tylko legendą. Teraz, gdy antyczne miasto Shurima raz jeszcze powstało z piasków
+                pustyni, Nasus powrócił i jest gotów poświęcić całą swą determinację, aby nie dopuścić do jej ponownego
+                upadku.
+              </p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="rammus">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_rammus" width="250" height="280">
+                <p class="h4 px-3 py-2">Rammus</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Idol dla wielu, wyrzutek w oczach nielicznych, i wielka tajemnica dla wszystkich. Mowa o
+                Rammusie, osobliwym stworzeniu, będącym prawdziwą zagadką. Na temat pochodzenia tej skrywającej swoje
+                oblicze pod kolczastą skorupą istoty istnieje wiele sprzecznych teorii. Jedni nazywają go półbogiem,
+                drudzy — świętą wyrocznią, a inni zrodzonym z magii potworem. Bez względu na to, jaka jest prawda,
+                Rammus nie zdradza nikomu swych sekretów i nie przerywa swojej wędrówki przez pustynię Shurimy na
+                niczyją prośbę.
+              </p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="teemo">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_teemo" width="250" height="280">
+                <p class="h4 px-3 py-2">Teemo</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Nie bacząc na najbardziej niebezpieczne przeszkody, Teemo przemierza świat z niekończącym
+                się entuzjazmem i radością. Jako Yordle z niezachwianym poczuciem moralności, jest dumny z
+                przestrzegania Kodeksu Harcerza Bandle, czasami do takiego stopnia, że nie zdaje sobie sprawy z
+                konsekwencji jego czynów. Niektórzy mówią, że istnienie Zwiadowców jest wątpliwe, lecz jedna rzecz jest
+                pewna: z osądem Teemo nie można dyskutować.
+              </p>
+            </div>
+          </div>
+
+          <!-- Karta postaci -->
+          <div class="row rounded section my-5 champions-cards" id="yasuo">
+            <p class="h1 my-3 pb-2 text-center border-bottom">Poznaj wybranego bohatera</p>
+            <div class="col-4 px-3">
+              <div class="mx-3 img-text">
+                <img class="champ_yasuo" width="250" height="280">
+                <p class="h4 px-3 py-2">Yasuo</p>
+              </div>
+              <div class="px-3 mt-2">
+                <!-- <audio controls src="#"></audio> -->
+              </div>
+            </div>
+            <div class="col">
+              <p class="h3">Yasuo, Ioniańczyk o wielkiej determinacji, jest zwinnym szermierzem, który używa wiatru
+                przeciwko wrogom. Kiedy był dumnym młodzieńcem, niesłusznie oskarżono go o zamordowanie mistrza. Jako że
+                nie mógł dowieść swojej niewinności, przyszło mu zabić własnego brata w akcie samoobrony. Nawet po tym,
+                jak ujawniono prawdziwego zabójcę jego mistrza, Yasuo wciąż nie potrafił wybaczyć sobie tego, co zrobił.
+                Teraz włóczy się po ojczyźnie, mając u swego boku tylko wiatr, który kieruje jego ostrzem.
+              </p>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
-  <!-- KONIEC KONTENT -->
+
+  <!-- audio do odtwarzania -->
+  <audio id="ahri-voice" src="resources/champs/voice/voice-ahri.ogg"></audio>
+  <audio id="aphelios-voice" src="resources/champs/voice/voice-aphelios.ogg"></audio>
+  <audio id="garen-voice" src="resources/champs/voice/voice-garen.ogg"></audio>
+  <audio id="jhin-voice" src="resources/champs/voice/voice-jhin.ogg"></audio>
+  <audio id="katarina-voice" src="resources/champs/voice/voice-katarina.ogg"></audio>
+  <audio id="lux-voice" src="resources/champs/voice/voice-lux.ogg"></audio>
+  <audio id="nasus-voice" src="resources/champs/voice/voice-nasus.ogg"></audio>
+  <audio id="rammus-voice" src="resources/champs/voice/voice-rammus.ogg"></audio>
+  <audio id="teemo-voice" src="resources/champs/voice/voice-teemo.ogg"></audio>
+  <audio id="yasuo-voice" src="resources/champs/voice/voice-yasuo.ogg"></audio>
+
+  <!-- BTN TOP -->
+  <button type="button"
+    class="btn btn-dark btn-floating btn-lg position-fixed border border-2 border-light rounded-circle"
+    id="btn-back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <!-- FOOTER -->
-  <footer class="text-center text-lg-start mt-auto">
+  <footer class="text-center text-lg-start mt-auto border-top stopka">
     <div class="text-center p-3">
-      © 2020 Copyright:
-      <a href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2022 Autorzy:
+      <a href="https://github.com/aderowski" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <g class="svgWrapper" transform="translate(6,6)">
+            <defs>
+              <filter id="glow">
+                <fegaussianblur class="blur" result="coloredBlur" stddeviation="1"></fegaussianblur>
+                <femerge>
+                  <femergenode in="coloredBlur"></femergenode>
+                  <femergenode in="coloredBlur"></femergenode>
+                  <femergenode in="coloredBlur"></femergenode>
+                  <femergenode in="SourceGraphic"></femergenode>
+                </femerge>
+              </filter>
+            </defs>
+            <path class="exampleGlow"
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              style="fill-opacity: 0.25; stroke-width: 0.5; stroke: white; filter: url(#glow);" />
+        </svg> Adrian Jelonek</a>, <a href="https://github.com/docekk" target="_blank"><svg
+          xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <g class="svgWrapper" transform="translate(6,6)">
+            <defs>
+              <filter id="glow">
+                <fegaussianblur class="blur" result="coloredBlur" stddeviation="1"></fegaussianblur>
+                <femerge>
+                  <femergenode in="coloredBlur"></femergenode>
+                  <femergenode in="coloredBlur"></femergenode>
+                  <femergenode in="coloredBlur"></femergenode>
+                  <femergenode in="SourceGraphic"></femergenode>
+                </femerge>
+              </filter>
+            </defs>
+            <path class="exampleGlow"
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              style="fill-opacity: 0.25; stroke-width: 0.5; stroke: white; filter: url(#glow);" />
+        </svg> Maciej Piechocki </a>
     </div>
   </footer>
-  <!-- footer -->
-
-  <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
 
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+  <!-- Wlasne js -->
+  <script src="resources/scripts/btntotop.js"></script>
+  <script src="resources/scripts/voicechamp.js"></script>
+  <script src="resources/scripts/zamiana.js"></script>
 </body>
 
 </html>
